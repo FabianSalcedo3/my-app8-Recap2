@@ -1,0 +1,13 @@
+<ul class="list-group bg-dark">
+  <li class="list-group-item active d-flex justify-content-center align-items-center gap-5"
+    *ngFor="let user of inactiveUsers">
+    {{user.id}} - {{user.name}} - {{user.status}}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link text-success" href="#">{{user.activeCounter}}</a></li>
+        <li class="page-item"><a class="page-link text-danger" href="#">{{user.inactiveCounter}}</a></li>
+      </ul>
+    </nav>
+    <button class="btn btn-outline-light" (click)="onCambiaStatus(user)">Cambia Status</button>
+  </li>
+</ul>

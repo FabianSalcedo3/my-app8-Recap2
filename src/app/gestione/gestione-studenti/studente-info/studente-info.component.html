@@ -1,0 +1,19 @@
+<h3>Info studente</h3>
+<p>Digita una matricola per conoscere il detaglio dello studente</p>
+
+<input type="number" [(ngModel)]="matricola">
+<button class="btn btn-outline-danger" (click)="onStampaInfo()">Invia</button>
+
+<div *ngIf="singoloStudente" class="card bg-dark text-white">
+  <div class="card-body">
+    <h4 class="card-title">Nome: {{singoloStudente.nome}}</h4>
+    <h5 class="card-text">Cognome: {{singoloStudente.cognome}}</h5>
+    <h5 class="card-text">Matricola: {{singoloStudente.matricola}}</h5>
+    <p>Corsi:</p>
+    <ul>
+      <li *ngFor="let corso of singoloStudente.codiceCorso">
+        {{corso}}
+      </li>
+    </ul>
+  </div>
+</div>
